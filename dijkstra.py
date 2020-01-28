@@ -48,7 +48,7 @@ def dijkstra(node_list, origin, destination):
         candidate_route = Route("", "", math.inf)
         candidate_cost = math.inf
         for route in node_list[current_node][2]:
-            if node_list[route.origin][3] < candidate_cost and route.cost <= (node_list[current_node][3] - node_list[route.origin][3]):
+            if node_list[route.origin][3] < candidate_cost and route.cost == (node_list[current_node][3] - node_list[route.origin][3]):
                 candidate_route = route
                 candidate_cost = node_list[route.origin][3]
         solution.append(candidate_route);
